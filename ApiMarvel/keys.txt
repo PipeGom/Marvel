@@ -9,3 +9,5 @@ private key
 
 
 Hash 01230b37293496e3c668ada1812633af
+
+https://gateway.marvel.com/v1/public/characters?ts=1&apikey=2aaf9becdbbb17f3a5336e113557e58c&hash=01230b37293496e3c668ada1812633af
