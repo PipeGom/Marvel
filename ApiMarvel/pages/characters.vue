@@ -1,9 +1,12 @@
-<template>
-  
+<template >
+ 
+  <center>
   <h1>Characters</h1>
-
+</center>
   <v-sheet
 class="d-flex align-content-end justify-center flex-wrap  "
+style="background-image: url('https://e0.pxfuel.com/wallpapers/789/909/desktop-wallpaper-dc-comic-book-covers-marvel-and-dc-comics.jpg');
+ "
   >
   <v-card
   v-for="item in characters"
@@ -18,36 +21,38 @@ class="d-flex align-content-end justify-center flex-wrap  "
       width="300px"
       cover
     ></v-img>
-    {{ item.name }}
+    <p>{{ item.name }}</p>
     </v-card-text>
       
 
       <v-dialog
         transition="dialog-bottom-transition"
-        width="auto"
+        width="20%"
+
        
       >
         <template v-slot:activator="{ props }">
           <v-btn
             color="blue"
             v-bind="props"
-          >From the bottom</v-btn>
+           
+          >See more</v-btn>
         </template>
         <template v-slot:default="{ isActive }">
           <v-card>
             <v-toolbar
-              color="primary"
+              color="cyan"
               :title="item.name"
             ></v-toolbar>
             <v-card-text>
 
               <v-img
       :src="(`${item.thumbnail.path}/detail.${item.thumbnail.extension}`)"
-      height="450px"
-      width="300px"
+      height="200px"
+      width="100%"
       cover
     ></v-img>
-
+           
             <h1>Description</h1>
             <v-card-text v-if=" item.description !== '' ">
               <p>{{ item.description }}</p>
@@ -56,45 +61,45 @@ class="d-flex align-content-end justify-center flex-wrap  "
               <p>N/A</p>
             </v-card-text>
             <h1>
-              Cantidad de comics
+              Comics
             </h1>
             <v-card-text >
               <p>{{ item.comics.available }}</p>
             </v-card-text>
 
             <h1>
-              Cantidad de series
+              Series
             </h1>
             <v-card-text >
               <p>{{ item.series.available }}</p>
             </v-card-text>
 
             <h1>
-              Cantidad de stories
+              Stories
             </h1>
             <v-card-text >
               <p>{{ item.stories.available }}</p>
             </v-card-text>
 
             <h1>
-              Cantidad de events
+              Events
             </h1>
             <v-card-text >
               <p>{{ item.events.available }}</p>
             </v-card-text>
 
             <h1>
-              Series destacadas
+              outstanding series
             </h1>
             <v-card-text v-for="(series,index) in item.series.items">
-              <p v-if="index < 3">{{ series.name }}</p>
+              <p v-if="index < 3"> {{ series.name }}</p>
             </v-card-text>
 
             
         
             </v-card-text>
             <v-card-actions class="justify-end">
-
+        
               <v-btn
                 variant="text"
                 @click="isActive.value = false"
@@ -110,9 +115,24 @@ class="d-flex align-content-end justify-center flex-wrap  "
 
   </v-sheet>
 
+  
+  
 </template>
 
+<style>
+h1{
+  font-family: Impact, fantasy;
+  
+}
+p {
+  font-weight: 500;
+  font-family: Didot, serif;
+  font-size: x-large;
+  text-align: center;
+}
 
+
+</style>
 
 <script  setup >
 
