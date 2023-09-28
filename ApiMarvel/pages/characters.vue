@@ -13,7 +13,10 @@ style="background-image: url('https://e0.pxfuel.com/wallpapers/789/909/desktop-w
               :key="item.id"
       class="ma-4 pa-4"
       style="background-color: rgb(0, 141, 184);"
+
+  
   >
+  
     <v-card-text>
       <v-img
       :src="(`${item.thumbnail.path}/detail.${item.thumbnail.extension}`)"
@@ -24,6 +27,7 @@ style="background-image: url('https://e0.pxfuel.com/wallpapers/789/909/desktop-w
     <p>{{ item.name }}</p>
     </v-card-text>
       
+   
 
       <v-dialog
         transition="dialog-bottom-transition"
@@ -37,8 +41,12 @@ style="background-image: url('https://e0.pxfuel.com/wallpapers/789/909/desktop-w
             v-bind="props"
            
           >See more</v-btn>
+          
+    
         </template>
+    
         <template v-slot:default="{ isActive }">
+         
           <v-card>
             <v-toolbar
               color="cyan"
@@ -106,11 +114,13 @@ style="background-image: url('https://e0.pxfuel.com/wallpapers/789/909/desktop-w
               >Close</v-btn>
             </v-card-actions>
           </v-card>
+         
         </template>
+      
       </v-dialog>
    
 
-
+   
   </v-card>
 
   </v-sheet>
