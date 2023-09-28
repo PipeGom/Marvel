@@ -99,13 +99,18 @@ style="background-image: url('https://e0.pxfuel.com/wallpapers/789/909/desktop-w
             <h1>
               outstanding series
             </h1>
+            <div v-if="item.series.available > 0">
             <v-card-text v-for="(series,index) in item.series.items">
               <p v-if="index < 3"> {{ series.name }}</p>
             </v-card-text>
 
             
-        
+           </div>
+           <div v-else="item.series.available = 0">
+            <p>N/A</p>
+           </div>
             </v-card-text>
+           
             <v-card-actions class="justify-end">
         
               <v-btn
